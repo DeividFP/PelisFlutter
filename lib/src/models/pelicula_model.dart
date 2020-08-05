@@ -12,6 +12,7 @@ class Peliculas{
 }
 
 class Pelicula {
+  String uniqueId;
   bool adult;
   String backdropPath;
   dynamic belongsToCollection;
@@ -94,14 +95,21 @@ class Pelicula {
     voteCount           = json['vote_count'];
   }
   getPosterImg() {
-
-    print(title);
     if(posterPath == null){
       return 'https://matthewsenvironmentalsolutions.com/images/com_hikashop/upload/not-available.png'; 
     }else{
       return 'https://image.tmdb.org/t/p/w500/$posterPath';
     }
   }
+
+  getBackgroundImg() {
+    if(posterPath == null){
+      return 'https://matthewsenvironmentalsolutions.com/images/com_hikashop/upload/not-available.png'; 
+    }else{
+      return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+    }
+  }
+
 }
 
 
